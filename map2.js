@@ -9,8 +9,7 @@ function drawMap2 () {
   
   
   
-  if(dist(soongX, soongY, width * 0.8, height / 2) < 30 && !switchedToEle) {
-    currentScreen = "ele";
-    switchedToEle = true;
+  if(dist(soongX, soongY, width * 0.8, height / 2) < 30 && switchedToEnding) {
+    currentScreen = "ending";
   }
 }

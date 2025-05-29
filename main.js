@@ -3,6 +3,7 @@ let currentScreen = "start";
 let eleImg, f5img, soongtalk;
 let switchedToEle = false;
 let switchedTosoongtalk = false;
+let switchedToEnding = false;
 
 
 function preload() {
@@ -55,6 +56,7 @@ function guide() {
   if (keyIsDown(83) && !switchedTosoongtalk) {
     currentScreen = "soongtalk";
     switchedTosoongtalk = true;
+    switchedToEnding = true;
   }
 }
 
@@ -64,7 +66,8 @@ function mousePressed() {
       currentScreen = "5f";
       soongX = width*0.75;
       soongY = height*5/6;
-      swithedToEle = false;
+      switchedToEle = false;
+      switchedToEnding = false;
     }
   } 
  
