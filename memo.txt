@@ -1,0 +1,7 @@
+내장함수
+setup , draw, preload , mousePressed
+
+사용자지정함수
+move guide
+drawzido drawele draw5f
+initimer drawTimer
