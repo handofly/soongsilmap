@@ -1,16 +1,19 @@
 // main.js
-let currentScreen = "zido";
+let currentScreen = "start";
 let eleImg, f5img, soongtalk;
 let switchedToEle = false;
 let switchedTosoongtalk = false;
 
 
 function preload() {
+  start = loadImage('start.jpg');
   bg = loadImage('zido.jpg');
   soong = loadImage('soong.jpg');  
   eleImg = loadImage('ele.jpg');
   f5img = loadImage('5f.jpg');
   soongtalk = loadImage('soongtalk.jpg');
+  map2 = loadImage('map2.jpg');
+  ending = loadImage('ending.jpg')
 }
 
 function setup() {
@@ -21,7 +24,9 @@ function setup() {
 }
 
 function draw() {
-  if (currentScreen === "zido") {
+  if (currentScreen === "start") {
+    drawStart();
+  } else if (currentScreen === "zido") {
     drawzido();
   } else if (currentScreen === "ele") {
     drawele();
@@ -31,7 +36,11 @@ function draw() {
     drawTimer();
   } else if (currentScreen === "soongtalk" && switchedTosoongtalk) {
     drawSoongtalk();
-  } 
+  }  else if (currentScreen === "map2") {
+    drawMap2();
+  } else if (currentScreen === "ending") {
+    drawending();
+  }
   
 }
 
@@ -48,3 +57,28 @@ function guide() {
     switchedTosoongtalk = true;
   }
 }
+
+function mousePressed() {
+  if (currentScreen === "ele") {
+    if (dist(mouseX, mouseY, width* 0.55, height * 0.25) < 60) {
+      currentScreen = "5f";
+      soongX = width*0.75;
+      soongY = height*5/6;
+      swithedToEle = false;
+    }
+  } 
+ 
+   else if (currentScreen === "soongtalk") {
+    
+    if (dist(mouseX, mouseY, width*0.3, height*0.8) < 80) {
+      currentScreen = "map2";
+    }
+  } 
+     else if (currentScreen === "start") {
+    
+    if (dist(mouseX, mouseY, width*0.7, height*0.6) < 50) {
+      currentScreen = "zido";
+    }
+  } 
+}
+
