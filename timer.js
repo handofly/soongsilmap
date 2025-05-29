@@ -37,7 +37,7 @@ function drawTimer() {
     fill(255);
     textSize(40);
     textAlign(CENTER, CENTER);
-    text("지각!", width / 2, height / 2);
+    text("지각! S키를 누르세요", width / 2, height / 2);
   }
   guide();
 }
