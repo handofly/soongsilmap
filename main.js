@@ -1,9 +1,14 @@
 // main.js
 let currentScreen = "start";
+let start, bg, soong, map2, ending;
 let eleImg, f5img, soongtalk;
 let switchedToEle = false;
 let switchedTosoongtalk = false;
 let switchedToEnding = false;
+let soongguide = false;
+let soongX , soongY;
+let character;
+
 
 
 function preload() {
@@ -22,6 +27,8 @@ function setup() {
   imageMode(CENTER);
   textAlign(CENTER, CENTER);
   textSize(80);
+  soongX = width/4;
+  soongY = height * 5/6;
 }
 
 function draw() {
@@ -43,6 +50,9 @@ function draw() {
     drawending();
   }
   
+   if (keyIsDown(UP_ARROW))  character = soongback
+  if (keyIsDown(DOWN_ARROW)) character = soong
+  
 }
 
 function move() {
@@ -51,6 +61,9 @@ function move() {
   if (keyIsDown(UP_ARROW))    soongY -= speed
   if (keyIsDown(DOWN_ARROW))  soongY += speed
 }
+
+
+
 
 function guide() {
   if (keyIsDown(83) && !switchedTosoongtalk) {
@@ -75,6 +88,7 @@ function mousePressed() {
     
     if (dist(mouseX, mouseY, width*0.3, height*0.8) < 80) {
       currentScreen = "map2";
+      soongguide = true;
     }
   } 
      else if (currentScreen === "start") {
@@ -85,3 +99,17 @@ function mousePressed() {
   } 
 }
 
+let progress = 0;
+
+
+function drawline(x1, y1, x2, y2) {
+  if (progress <= 1) {
+    let nowX = lerp(x1, x2, progress);
+    let nowY = lerp(y1, y2, progress);
+    line(x1, y1, nowX, nowY);
+    progress += 0.01; 
+  } else if (progress === 1) {
+    line(x1,y1,x2,y2)
+    
+  }
+}
