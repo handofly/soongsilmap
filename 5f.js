@@ -21,9 +21,6 @@ function draw5f() {
   speed = 4;
 }
 
- 
-  
-  
   
   if(dist(soongX,soongY,width*0.8,height/2)< 40) {
     if(!soongguide) {

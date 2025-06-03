@@ -8,6 +8,8 @@ let switchedToEnding = false;
 let soongguide = false;
 let soongX , soongY;
 let character;
+let y;
+
 
 
 
@@ -15,12 +17,14 @@ function preload() {
   start = loadImage('start.jpg');
   bg = loadImage('zido.jpg');
   soong = loadImage('soong.jpg');  
+  soongback = loadImage('soongback.jpg');
   eleImg = loadImage('ele.jpg');
   f5img = loadImage('5f.jpg');
   soongtalk = loadImage('soongtalk.jpg');
   map2 = loadImage('map2.jpg');
-  ending = loadImage('ending.jpg')
 }
+
+
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -29,6 +33,8 @@ function setup() {
   textSize(80);
   soongX = width/4;
   soongY = height * 5/6;
+  character = soongback;
+  y = height + 100;
 }
 
 function draw() {
@@ -46,9 +52,10 @@ function draw() {
     drawSoongtalk();
   }  else if (currentScreen === "map2") {
     drawMap2();
-  } else if (currentScreen === "ending") {
+  }  else if (currentScreen === "ending") {
     drawending();
-  }
+  } 
+  
   
    if (keyIsDown(UP_ARROW))  character = soongback
   if (keyIsDown(DOWN_ARROW)) character = soong
