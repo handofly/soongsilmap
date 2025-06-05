@@ -99,7 +99,7 @@ function mousePressed() {
  
    else if (currentScreen === "soongtalk") {
     
-    if (dist(mouseX, mouseY, width*0.3, height*0.8) < 80) {
+    if (dist(mouseX, mouseY, width*0.27, height*0.8) < 200) {
       currentScreen = "map2";
       soongguide = true;
     }
