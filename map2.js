@@ -27,6 +27,9 @@ function drawMap2 () {
     }
   }
 move();
+  textSize(15)
+  text('아 길이 이렇게 되어있구나!',soongX,soongY + 50);
+  move();
   
   
   if (dist(soongX, soongY, width * 0.8, height / 2) < 30 && switchedToEnding) {
