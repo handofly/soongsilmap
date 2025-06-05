@@ -106,7 +106,7 @@ function mousePressed() {
   } 
      else if (currentScreen === "start") {
     
-    if (dist(mouseX, mouseY, width*0.7, height*0.6) < 50) {
+    if (dist(mouseX, mouseY, width*0.7, height*0.6) < 200) {
       currentScreen = "zido";
     }
   } 
