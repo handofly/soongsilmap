@@ -22,7 +22,7 @@ function draw5f() {
   
   if(!soongguide) {
     fill(255);
-    rect(width*0.85,height*0.4,100,190)
+    quad(width * 0.85, height * 0.4, width , height * 0.4, width, height * 0.7, width * 0.85, height * 0.7);
   }
 }
 
