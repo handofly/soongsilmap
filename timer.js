@@ -28,7 +28,7 @@ function drawTimer() {
 
     let elapsedSeconds = floor((millis() - startTime1) / 1000);
 
-    if (elapsedSeconds >= 5) {
+    if (elapsedSeconds >= 3) {
       showClock1 = false;
       startTime1 = 0;
       return;
