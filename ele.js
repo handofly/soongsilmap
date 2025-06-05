@@ -19,7 +19,7 @@ function drawele() {
   text(texting, width/4, height * 0.8);
 
   if (currenttext < message.length) {
-    currenttext += 0.1;
+    currenttext += 0.3;
   }
   }
 }
