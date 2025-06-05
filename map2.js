@@ -28,6 +28,8 @@ function drawMap2 () {
   }
 move();
   textSize(15)
+  noStroke();
+  fill(0)
   text('아 길이 이렇게 되어있구나!',soongX,soongY + 50);
   move();
   
