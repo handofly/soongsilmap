@@ -8,8 +8,6 @@ function drawele() {
   image(eleImg, width / 2, height / 2, width, height); 
   
   noStroke()
-  fill(255, 0, 0);
-  ellipse(width * 0.55 , height*0.25, 60, 60);  
   
   if(!soongguide) {
     fill(255);

@@ -8,7 +8,7 @@ function drawzido() {
   
 
   textSize(15)
-  text('정보과학관을 어떻게 가야하지?',soongX,soongY + 30);
+  text('음... 정보과학관을 어떻게 가야하지?',soongX,soongY + 50);
   move();
 
   image(character,soongX,soongY,soong.width/7,soong.height/7);

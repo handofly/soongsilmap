@@ -19,13 +19,13 @@ function draw5f() {
   speed = 0;
 } else {
   speed = 4;
+  
+  if(!soongguide) {
+    fill(255);
+    rect(width*0.85,height*0.4,100,190)
+  }
 }
 
   
   if(dist(soongX,soongY,width*0.8,height/2)< 40) {
-    if(!soongguide) {
-      currentScreen = "timer";
-    } else {
-      currentScreen = "ending";
-    }
-  } }
+   currentScreen = "timer" } }

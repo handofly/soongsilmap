@@ -6,6 +6,7 @@ let switchedToEle = false;
 let switchedTosoongtalk = false;
 let switchedToEnding = false;
 let soongguide = false;
+let late = true;
 let soongX , soongY;
 let character;
 let y;
@@ -47,7 +48,8 @@ function draw() {
   } else if (currentScreen === "5f") {
     draw5f();
   } else if (currentScreen === "timer") {
-    drawTimer();
+      if(late) drawTimer()
+      else drawTimer2() ;
   } else if (currentScreen === "soongtalk" && switchedTosoongtalk) {
     drawSoongtalk();
   }  else if (currentScreen === "map2") {
@@ -73,10 +75,14 @@ function move() {
 
 
 function guide() {
-  if (keyIsDown(83) && !switchedTosoongtalk) {
+  if (keyIsDown(71) && !switchedTosoongtalk) {
     currentScreen = "soongtalk";
     switchedTosoongtalk = true;
     switchedToEnding = true;
+    late = false;
+  }
+  if (keyIsDown(69) && !late) {
+    currentScreen = "ending";
   }
 }
 
