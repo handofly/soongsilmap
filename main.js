@@ -87,39 +87,36 @@ function guide() {
 }
 
 function mousePressed() {
+  if (!fullscreen()) {
+    fullscreen(true);
+    return; 
+  }
 
-   if (mouseX > 0 && mouseX < windowWidth && mouseY > 0 && mouseY < windowHeight) {
-    let fs = fullscreen();
-    fullscreen(!fs);
-     
   if (currentScreen === "ele") {
-    if (dist(mouseX, mouseY, width* 0.55, height * 0.25) < 60) {
+    if (dist(mouseX, mouseY, width * 0.55, height * 0.25) < 60) {
       currentScreen = "5f";
-      soongX = width*0.75;
-      soongY = height*5/6;
+      soongX = width * 0.75;
+      soongY = height * 5 / 6;
       switchedToEle = false;
       switchedToEnding = false;
     }
-  } 
- 
-   else if (currentScreen === "soongtalk") {
-    
-    if (dist(mouseX, mouseY, width*0.27, height*0.8) < 200) {
+  } else if (currentScreen === "soongtalk") {
+    if (dist(mouseX, mouseY, width * 0.27, height * 0.8) < 200) {
       currentScreen = "map2";
       soongguide = true;
     }
-  } 
-     else if (currentScreen === "start") {
-    
-    if (dist(mouseX, mouseY, width*0.7, height*0.6) < 200) {
+  } else if (currentScreen === "start") {
+    if (dist(mouseX, mouseY, width * 0.7, height * 0.6) < 200) {
       currentScreen = "zido";
     }
-  } 
+  }
 }
 
-  function windowResized() {
+function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
+
+
 
 let progress = 0;
 
