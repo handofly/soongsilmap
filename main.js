@@ -87,6 +87,11 @@ function guide() {
 }
 
 function mousePressed() {
+
+   if (mouseX > 0 && mouseX < windowWidth && mouseY > 0 && mouseY < windowHeight) {
+    let fs = fullscreen();
+    fullscreen(!fs);
+     
   if (currentScreen === "ele") {
     if (dist(mouseX, mouseY, width* 0.55, height * 0.25) < 60) {
       currentScreen = "5f";
