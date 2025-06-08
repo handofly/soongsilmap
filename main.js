@@ -117,6 +117,10 @@ function mousePressed() {
   } 
 }
 
+  function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+
 let progress = 0;
 
 
